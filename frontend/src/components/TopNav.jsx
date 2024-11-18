@@ -4,16 +4,21 @@ import {
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const TopNav = ({ type }) => {
   return (
     <div className="top-nav">
       <div>
-        <FontAwesomeIcon icon={faArrowLeft} />
+        <Link to={"/home"}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </Link>
       </div>
       <h2>{type}</h2>
       <div>
-        <FontAwesomeIcon icon={faPlus} />
+        <Link to={"/messages"}>
+          <FontAwesomeIcon icon={faPlus} />
+        </Link>
         <FontAwesomeIcon icon={faEllipsisVertical} />
       </div>
     </div>

@@ -3,14 +3,16 @@ import ButtomNav from "../components/ButtomNav";
 import TopNav from "../components/TopNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import userWhite from "../image/userWhite.jpg";
+import React, { useContext } from "react";
+import { MainContext } from "../context/MainContext";
 
 const Profile = () => {
-  const lang = "ar";
+  const { Lang } = useContext(MainContext);
   return (
     <div className="user-page">
       <TopNav type={null} />
       <div className="my-profile">
-        <h3> {lang !== "ar" ? "My Profile" : "ملفي الشخصي"}</h3>
+        <h3> {Lang !== "ar" ? "My Profile" : "ملفي الشخصي"}</h3>
         <div className="img">
           <img src={userWhite} alt="" />
         </div>
@@ -23,16 +25,16 @@ const Profile = () => {
           </div>
           <input
             type="text"
-            placeholder={lang !== "ar" ? "Enter your Number" : "ادخل رقمك"}
+            placeholder={Lang !== "ar" ? "Enter your Number" : "ادخل رقمك"}
           />
           <div>
             <input
               type="password"
-              placeholder={lang !== "ar" ? "Enter Password" : "ادخل كلمه السر"}
+              placeholder={Lang !== "ar" ? "Enter Password" : "ادخل كلمه السر"}
             />
             <FontAwesomeIcon icon={faPencil} className="password" />
           </div>
-          <button> {lang !== "ar" ? "Save" : "حفظ"}</button>
+          <button> {Lang !== "ar" ? "Save" : "حفظ"}</button>
         </form>
       </div>
       <ButtomNav />

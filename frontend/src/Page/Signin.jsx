@@ -1,14 +1,15 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import React, { useContext } from "react";
+import { MainContext } from "../context/MainContext";
 
 const Auth = () => {
-  const lang = "ar";
+  const { Lang } = useContext(MainContext);
   return (
     <div className="auth">
       <div className="welcome">
-        {lang !== "ar" ? (
+        {Lang !== "ar" ? (
           <h2>
             welcome To My Clinic ! <br />
             Sign in
@@ -26,26 +27,26 @@ const Auth = () => {
           <input
             type="text"
             placeholder={
-              lang !== "ar" ? "Enter your full name" : "ادخل اسمك بالكامل"
+              Lang !== "ar" ? "Enter your full name" : "ادخل اسمك بالكامل"
             }
           />
           <input
             type="text"
-            placeholder={lang !== "ar" ? "Enter your Number" : "ادخل رقمك"}
+            placeholder={Lang !== "ar" ? "Enter your Number" : "ادخل رقمك"}
           />
           <div>
             <input
               type="password"
-              placeholder={lang !== "ar" ? "Enter Password" : "ادخل كلمه السر"}
+              placeholder={Lang !== "ar" ? "Enter Password" : "ادخل كلمه السر"}
             />
             <FontAwesomeIcon icon={faEye} />
           </div>
           <Link to="#">
             {" "}
-            {lang !== "ar" ? "Forget Password" : "نسيت كلمه السر"}
+            {Lang !== "ar" ? "Forget Password" : "نسيت كلمه السر"}
           </Link>
         </form>
-        <button>{lang !== "ar" ? "Sign in" : "تسجيل دخول"}</button>
+        <button>{Lang !== "ar" ? "Sign in" : "تسجيل دخول"}</button>
       </div>
     </div>
   );

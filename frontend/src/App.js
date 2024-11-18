@@ -8,10 +8,15 @@ import Notification from "./Page/Notification";
 import AboutClinc from "./components/AboutClinc";
 import Registers from "./Page/Registers";
 import Messages from "./Page/Messages";
+import Appointment from "./Page/Appointment";
+import { useContext } from "react";
+import { MainContext } from "./context/MainContext";
 
 function App() {
+  const { Lang } = useContext(MainContext);
+
   return (
-    <div className="App">
+    <div className={Lang !== "ar" ? "App" : "App ar"}>
       <Routes>
         <Route index element={<Test />} />
         <Route path="/login" element={<Login />} />
@@ -22,6 +27,7 @@ function App() {
         <Route path="/about" element={<AboutClinc />} />
         <Route path="/registers" element={<Registers />} />
         <Route path="/messages" element={<Messages />} />
+        <Route path="/appointment" element={<Appointment />} />
       </Routes>
     </div>
   );

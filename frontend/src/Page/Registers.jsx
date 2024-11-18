@@ -3,26 +3,29 @@ import Search from "../components/Search";
 import TopNav from "../components/TopNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import React, { useContext } from "react";
+import { MainContext } from "../context/MainContext";
+import ButtomNav from "../components/ButtomNav";
 
 const Registers = () => {
-  const lang = "ar";
+  const { Lang } = useContext(MainContext);
   const [isNote, setisNote] = useState(true);
   return (
     <div className="registers-page">
-      <TopNav type={lang !== "ar" ? "Registers" : "السجلات"} />
+      <TopNav type={Lang !== "ar" ? "Registers" : "السجلات"} />
       <Search />
       <div className="head">
         <button
           className={isNote ? "acitve" : ""}
           onClick={() => setisNote(true)}
         >
-          {lang !== "ar" ? "notes" : "ملاحظات"}
+          {Lang !== "ar" ? "notes" : "ملاحظات"}
         </button>
         <button
           className={!isNote ? "acitve" : ""}
           onClick={() => setisNote(false)}
         >
-          {lang !== "ar" ? "registers" : "سجلات"}
+          {Lang !== "ar" ? "registers" : "سجلات"}
         </button>
       </div>
       <div className="container">
@@ -30,16 +33,16 @@ const Registers = () => {
           <div className="boxs">
             <div className="box">
               <div>
-                <h4>{lang !== "ar" ? "notes" : "ملاحظة"}: </h4>
-                <p>{lang !== "ar" ? "any thing" : "اي شي"}</p>
+                <h4>{Lang !== "ar" ? "notes" : "ملاحظة"}: </h4>
+                <p>{Lang !== "ar" ? "any thing" : "اي شي"}</p>
               </div>
               <div>
-                <h4>{lang !== "ar" ? "Payment" : "مريض"}: </h4>
-                <p>{lang !== "ar" ? "any thing" : "اي شي"}</p>
+                <h4>{Lang !== "ar" ? "Payment" : "مريض"}: </h4>
+                <p>{Lang !== "ar" ? "any thing" : "اي شي"}</p>
               </div>
               <div>
-                <h4>{lang !== "ar" ? "Date" : "تاريخ"}: </h4>
-                <p>{lang !== "ar" ? "any thing" : "اي شي"}</p>
+                <h4>{Lang !== "ar" ? "Date" : "تاريخ"}: </h4>
+                <p>{Lang !== "ar" ? "any thing" : "اي شي"}</p>
               </div>
               <span>
                 <FontAwesomeIcon icon={faTrashCan} />
@@ -51,8 +54,8 @@ const Registers = () => {
           <div className="boxs">
             <div className="box">
               <div>
-                <h4> {lang !== "ar" ? "notes" : "ملاحظات"}: </h4>
-                <p> {lang !== "ar" ? "any thing" : "اي شي"}</p>
+                <h4> {Lang !== "ar" ? "notes" : "ملاحظات"}: </h4>
+                <p> {Lang !== "ar" ? "any thing" : "اي شي"}</p>
               </div>
               <span>
                 <FontAwesomeIcon icon={faTrashCan} />
@@ -60,8 +63,8 @@ const Registers = () => {
             </div>
             <div className="box">
               <div>
-                <h4> {lang !== "ar" ? "notes" : "ملاحظات"}: </h4>
-                <p> {lang !== "ar" ? "any thing" : "اي شي"}</p>
+                <h4> {Lang !== "ar" ? "notes" : "ملاحظات"}: </h4>
+                <p> {Lang !== "ar" ? "any thing" : "اي شي"}</p>
               </div>
               <span>
                 <FontAwesomeIcon icon={faTrashCan} />
@@ -69,8 +72,8 @@ const Registers = () => {
             </div>
             <div className="box">
               <div>
-                <h4> {lang !== "ar" ? "notes" : "ملاحظات"}: </h4>
-                <p> {lang !== "ar" ? "any thing" : "اي شي"}</p>
+                <h4> {Lang !== "ar" ? "notes" : "ملاحظات"}: </h4>
+                <p> {Lang !== "ar" ? "any thing" : "اي شي"}</p>
               </div>
               <span>
                 <FontAwesomeIcon icon={faTrashCan} />
@@ -78,8 +81,8 @@ const Registers = () => {
             </div>
             <div className="box">
               <div>
-                <h4> {lang !== "ar" ? "notes" : "ملاحظات"}: </h4>
-                <p> {lang !== "ar" ? "any thing" : "اي شي"}</p>
+                <h4> {Lang !== "ar" ? "notes" : "ملاحظات"}: </h4>
+                <p> {Lang !== "ar" ? "any thing" : "اي شي"}</p>
               </div>
               <span>
                 <FontAwesomeIcon icon={faTrashCan} />
@@ -87,8 +90,8 @@ const Registers = () => {
             </div>
             <div className="box">
               <div>
-                <h4> {lang !== "ar" ? "notes" : "ملاحظات"}: </h4>
-                <p> {lang !== "ar" ? "any thing" : "اي شي"}</p>
+                <h4> {Lang !== "ar" ? "notes" : "ملاحظات"}: </h4>
+                <p> {Lang !== "ar" ? "any thing" : "اي شي"}</p>
               </div>
               <span>
                 <FontAwesomeIcon icon={faTrashCan} />
@@ -97,6 +100,7 @@ const Registers = () => {
           </div>
         )}
       </div>
+      <ButtomNav />
     </div>
   );
 };

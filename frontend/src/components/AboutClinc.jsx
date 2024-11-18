@@ -8,14 +8,16 @@ import {
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useContext } from "react";
+import { MainContext } from "../context/MainContext";
 
 const AboutClinc = () => {
-  const lang = "ar";
+  const { Lang } = useContext(MainContext);
   return (
     <div className="about-page">
       <TopNav />
       <div className="head">
-        <h2>{lang !== "ar" ? "ABOUT CLINIC !" : "! حول العيادة"}</h2>
+        <h2>{Lang !== "ar" ? "ABOUT CLINIC !" : "! حول العيادة"}</h2>
       </div>
       <div className="container">
         <div className="background"></div>
@@ -26,14 +28,14 @@ const AboutClinc = () => {
               <div className="top">
                 <FontAwesomeIcon icon={faStar} />
                 <div>
-                  <h4>7 {lang !== "ar" ? "Years" : "سنوات"}</h4>
-                  <p> {lang !== "ar" ? "Experience" : "خبرة"}</p>
+                  <h4>7 {Lang !== "ar" ? "Years" : "سنوات"}</h4>
+                  <p> {Lang !== "ar" ? "Experience" : "خبرة"}</p>
                 </div>
               </div>
               <div className="buttom">
                 <p>
-                  <span>{lang !== "ar" ? "focus" : "انتبه"}:</span>{" "}
-                  {lang !== "ar"
+                  <span>{Lang !== "ar" ? "focus" : "انتبه"}:</span>{" "}
+                  {Lang !== "ar"
                     ? "Lorem ipsum dolor sit amet consectetur adipisicing elit Exercitationem deserunt natus cupiditate Blanditiis fugiat asper impedit?"
                     : "هنا يمكنك اضافه امر عن عيادتك مكان ساعات الخ "}
                 </p>
@@ -72,7 +74,7 @@ const AboutClinc = () => {
         <div className="location">
           <FontAwesomeIcon icon={faLocationDot} />
           <p>
-            {lang !== "ar"
+            {Lang !== "ar"
               ? "Hamadania - Tshtin Project / Build 237"
               : "حمدانيه - مشروع تشتن / بناء 237"}
           </p>

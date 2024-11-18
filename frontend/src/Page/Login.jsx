@@ -1,13 +1,14 @@
 import { faEye, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useContext } from "react";
+import { MainContext } from "../context/MainContext";
 
 const Auth = () => {
-  const lang = "ar";
+  const { Lang } = useContext(MainContext);
   return (
     <div className="auth">
       <div className="welcome">
-        {lang !== "ar" ? (
+        {Lang !== "ar" ? (
           <h2>
             welcome To My Clinic ! <br />
             Log in
@@ -25,17 +26,17 @@ const Auth = () => {
           <input
             type="text"
             placeholder={
-              lang !== "ar" ? "Enter your full name" : "ادخل اسمك بالكامل"
+              Lang !== "ar" ? "Enter your full name" : "ادخل اسمك بالكامل"
             }
           />
           <input
             type="text"
-            placeholder={lang !== "ar" ? "Enter your Number" : "ادخل رقمك"}
+            placeholder={Lang !== "ar" ? "Enter your Number" : "ادخل رقمك"}
           />
           <div>
             <input
               type="password"
-              placeholder={lang !== "ar" ? "Enter Password" : "ادخل كلمه السر"}
+              placeholder={Lang !== "ar" ? "Enter Password" : "ادخل كلمه السر"}
             />
             <FontAwesomeIcon icon={faEye} />
           </div>
@@ -43,22 +44,22 @@ const Auth = () => {
             <input
               type="password"
               placeholder={
-                lang !== "ar" ? "Confirm password" : "تاكيد كلمه السر"
+                Lang !== "ar" ? "Confirm password" : "تاكيد كلمه السر"
               }
             />
             <FontAwesomeIcon icon={faEye} />
           </div>
-          <input type="text" placeholder={lang !== "ar" ? "Gander" : "النوع"} />
-          <input type="number" placeholder={lang !== "ar" ? "Age" : "العمر"} />
+          <input type="text" placeholder={Lang !== "ar" ? "Gander" : "النوع"} />
+          <input type="number" placeholder={Lang !== "ar" ? "Age" : "العمر"} />
           <div>
             <input
               type="text"
-              placeholder={lang !== "ar" ? "Addres" : "المكان"}
+              placeholder={Lang !== "ar" ? "Addres" : "المكان"}
             />
             <FontAwesomeIcon icon={faLocationDot} />
           </div>
         </form>
-        <button>{lang !== "ar" ? "Log in" : "انشاء حساب"}</button>
+        <button>{Lang !== "ar" ? "Log in" : "انشاء حساب"}</button>
       </div>
     </div>
   );

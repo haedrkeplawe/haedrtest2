@@ -1,7 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Test = () => {
-  console.log(useLocation());
   return (
     <div>
       <Link to={"/login"}>login</Link> <br />

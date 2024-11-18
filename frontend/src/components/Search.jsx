@@ -1,15 +1,17 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
+import { MainContext } from "../context/MainContext";
 
 const Search = () => {
-  const lang = "ar";
+  const { Lang } = useContext(MainContext);
   return (
     <div className="search-component">
       <form>
         <div>
           <input
             type="text"
-            placeholder={lang !== "ar" ? "Search" : "بحث"}
+            placeholder={Lang !== "ar" ? "Search" : "بحث"}
             required
           />
           <FontAwesomeIcon icon={faMagnifyingGlass} />
