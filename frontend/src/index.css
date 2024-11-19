@@ -56,9 +56,90 @@ button {
   font-size: 14px;
   cursor: pointer;
 }
-.top-nav div {
+.top-nav > div {
   display: flex;
   gap: 5px;
+}
+.top-nav .background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #00000057;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.top-nav .background.close {
+  display: none;
+}
+.top-nav .dots {
+  position: fixed;
+  background-color: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 72%;
+  right: 0;
+  height: 100vh;
+  top: 0;
+  top: 0;
+  border-radius: 18px 0px 0px 18px;
+  color: var(--one-blue);
+  transition: 1s;
+}
+.top-nav .dots.close {
+  right: -100%;
+}
+.top-nav .dots .close svg {
+  background-color: var(--one-blue);
+  color: white;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  margin: 20px;
+}
+.top-nav .dots .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #716b6b;
+  padding-bottom: 10px;
+  margin: 25px;
+}
+.top-nav .dots .img {
+  background: url(./image/userOrange.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fed36b;
+  width: 80px;
+}
+.top-nav .dots .lest {
+  display: flex;
+  flex-direction: column;
+  margin: 0 25px;
+  gap: 10px;
+}
+.top-nav .dots .lest > div,
+.top-nav .dots .lest > a {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--one-blue);
+}
+.top-nav .dots .lest > div svg,
+.top-nav .dots .lest > a svg {
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
 }
 /* buttom nav */
 .buttom-nav {
@@ -512,13 +593,11 @@ button {
   cursor: auto;
 }
 .registers-page .container .create svg {
-  background-color: indianred;
+  background-color: var(--one-blue);
   width: fit-content;
-  margin: 0 auto;
   color: white;
   padding: 7px;
   border-radius: 11px;
-  margin: 0 90%;
 }
 .registers-page .container .create input {
   background: var(--one-blue);

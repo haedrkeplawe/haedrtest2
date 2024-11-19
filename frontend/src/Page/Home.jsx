@@ -26,11 +26,11 @@ const Home = () => {
             <img src={Teeth} alt="" />
             <h5>{Lang !== "ar" ? "Appointement" : "مواعيدي"}</h5>
           </Link>
-          <Link to={"/"}>
+          <Link to={"/home"}>
             <img src={Tools} alt="" />
             <h5> {Lang !== "ar" ? "Material" : "مواد"}</h5>
           </Link>
-          <Link to={"/"}>
+          <Link to={"/home"}>
             <img src={Userwomen} alt="" />
             <h5>{Lang !== "ar" ? "Employees" : "موظفيين"}</h5>
           </Link>
