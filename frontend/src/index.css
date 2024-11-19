@@ -17,6 +17,9 @@ body {
 .App.ar {
   text-align-last: end;
 }
+.App.ar input {
+  text-align: end;
+}
 input {
   outline: none;
 }
@@ -165,18 +168,22 @@ button {
 .buttom-nav a.active::before {
   content: "";
   position: absolute;
-  width: 67px;
-  height: 67px;
-  border-radius: 36px;
-  top: -27px;
-  right: -37%;
+  width: 81px;
+  height: 85px;
+  border-radius: 42px;
+  top: -48px;
   background-color: var(--two-blue);
+  right: 50%;
+  transform: translateX(50%);
 }
 .buttom-nav .active svg {
   background: var(--one-blue);
   color: #85abc7;
-  top: -3px;
+  top: -13px;
+  width: 20px;
+  height: 20px;
 }
+
 /* auth */
 .auth .welcome {
   padding: 30px;
@@ -673,6 +680,10 @@ button {
   opacity: 0.7;
   cursor: pointer;
   opacity: 0.4;
+}
+.App.ar .messages-page form svg,
+.App.ar .search-component form svg {
+  left: 20px;
 }
 .messages-page .select h3 {
   width: fit-content;

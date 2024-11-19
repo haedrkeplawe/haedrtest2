@@ -15,20 +15,20 @@ import axios from "axios";
 
 function App() {
   const { Lang } = useContext(MainContext);
-  useEffect(() => {
-    axios
-      .post("https://d53b-89-38-97-178.ngrok-free.app/api/doctor/login", {
-        name: "haedr",
-        age: "22",
-        address: "darraaa",
-        phone: "09367745244",
-        gender: "male",
-        password: "471659d8",
-      })
-      .then((response) => {
-        console.log(response);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .post("https://d53b-89-38-97-178.ngrok-free.app/api/doctor/login", {
+  //       name: "haedr",
+  //       age: "22",
+  //       address: "darraaa",
+  //       phone: "09367745244",
+  //       gender: "male",
+  //       password: "471659d8",
+  //     })
+  //     .then((response) => {
+  //       console.log(response);
+  //     });
+  // }, []);
   return (
     <div className={Lang !== "ar" ? "App" : "App ar"}>
       <Routes>
